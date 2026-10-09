@@ -56,11 +56,13 @@ body {
 
 #dvd-logo {
     position: fixed;
+    bottom: 30px;
+    right: 30px;
     width: 150px;
     height: auto;
-    z-index: 1;
-    user-select: none;
+    z-index: 1; 
     pointer-events: none;
+    user-select: none;
 }
 
 #about {
@@ -332,7 +334,6 @@ body {
     filter: invert(0.95) hue-rotate(180deg);
 }
 
-/* Recommend Section & YouTube Grid Styles */
 .recommend-section {
     margin-top: 60px;
 }
@@ -366,4 +367,54 @@ body {
     .video-grid {
         grid-template-columns: 1fr;
     }
+}
+
+@media screen and (max-width: 1024px) {
+    .about-container {
+        flex-direction: column !important; 
+        gap: 30px;
+    }
+    
+    .top-songs-grid {
+        grid-template-columns: 1fr !important; 
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr !important; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #page-title {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    #top-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    #top-menu a {
+        font-size: 14px;
+    }
+
+    section#contact form {
+        width: 90% !important;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .section-title {
+        font-size: 28px !important;
+    }
+}
+
+section {
+    position: relative;
+    z-index: 3; 
+    background-color: transparent;
+    padding: 60px 20px;
 }
