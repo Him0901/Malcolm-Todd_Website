@@ -71,7 +71,6 @@ window.addEventListener('scroll', () => {
     const rect = albumSection.getBoundingClientRect();
     const sectionHeight = albumSection.offsetHeight - window.innerHeight;
     
-    // 橫向滾動邏輯
     let progress = -rect.top / sectionHeight;
     progress = Math.max(0, Math.min(1, progress));
 
@@ -80,7 +79,6 @@ window.addEventListener('scroll', () => {
 
     track.style.transform = `translateX(-${moveX}px)`;
 
-    // 標題平行四邊形動態（一次性觸發）
     if (rect.top <= window.innerHeight * 0.75 && !animatedOnce) {
         if (albumTitleBox) {
             albumTitleBox.classList.add('animate');
