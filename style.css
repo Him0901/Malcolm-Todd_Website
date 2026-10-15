@@ -9,6 +9,46 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.marquee-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 35px;
+    background-color: #c21e25;
+    color: #000000;
+    overflow: hidden;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    user-select: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scrollMarquee 18s linear infinite;
+}
+
+.marquee-track span {
+    display: inline-block;
+    padding-right: 50px;
+}
+
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .hero {
     position: relative;
     width: 100vw;
@@ -21,7 +61,7 @@ body {
 
 #page-title {
     position: fixed;
-    top: 20px;
+    top: 52px;
     left: 20px;
     color: #ffffff;
     font-family: Arial, sans-serif;
@@ -29,11 +69,22 @@ body {
     font-weight: bold;
     z-index: 100;
     user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#page-title:hover {
+    color: #c21e25;
+}
+
+#page-title:hover ~ #top-menu a {
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
 }
 
 #top-menu {
     position: fixed;
-    top: 20px;
+    top: 55px;
     right: 20px;
     display: flex;
     gap: 30px;
@@ -58,7 +109,7 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 150px;
+    width: 130px;
     height: auto;
     z-index: 1; 
     pointer-events: none;
@@ -235,7 +286,6 @@ body {
     line-height: 1.5;
 }
 
-/* Music Section Styles */
 #music {
     min-height: 100vh;
     padding: 100px 0;
@@ -278,6 +328,7 @@ body {
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     user-select: none;
+    position: relative;
 }
 
 .song-card:hover {
@@ -334,6 +385,23 @@ body {
     filter: invert(0.95) hue-rotate(180deg);
 }
 
+.lyrics-link {
+    position: absolute;
+    right: 30px;
+    bottom: 18px;
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.lyrics-link:hover {
+    color: #c21e25;
+    text-decoration: underline;
+}
+
 .recommend-section {
     margin-top: 60px;
 }
@@ -363,10 +431,37 @@ body {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
+#tour {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    padding-bottom: 60px;
+}
+
+#contact {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    padding-bottom: 80px;
+}
+
+footer {
+    position: relative;
+    z-index: 5;
+    background-color: #cccccc;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+section {
+    position: relative;
+    z-index: 2; 
+    background-color: transparent;
+    padding: 60px 20px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -374,47 +469,31 @@ body {
         flex-direction: column !important; 
         gap: 30px;
     }
-    
     .top-songs-grid {
         grid-template-columns: 1fr !important; 
     }
-
     .video-grid {
         grid-template-columns: 1fr !important; 
     }
 }
 
 @media screen and (max-width: 768px) {
-    #page-title {
-        font-size: 24px;
-        padding: 10px;
-    }
-
     #top-menu {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
         padding: 10px;
+        top: 48px;
     }
-
     #top-menu a {
         font-size: 14px;
     }
-
     section#contact form {
         width: 90% !important;
         margin: 0 auto;
         box-sizing: border-box;
     }
-
     .section-title {
         font-size: 28px !important;
     }
-}
-
-section {
-    position: relative;
-    z-index: 3; 
-    background-color: transparent;
-    padding: 60px 20px;
 }
