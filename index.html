@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Malcolm Todd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -344,20 +347,20 @@
             <h2 class="section-title">CONTACT ME</h2>
         </div>
         <div class="music-content-container">
-            <form action="mailto:Kobehimhim@gmail.com" method="post" enctype="text/plain" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
-                <div style="display: flex; flex-direction: column; gap: 5px;">
-                    <label style="color: white; font-weight: bold; font-family: sans-serif;">Your name</label>
-                    <input type="text" name="name" placeholder="Enter your name" style="padding: 12px; border-radius: 8px; border: 1px solid #444; background: #222; color: white;">
+            <form action="mailto:Kobehimhim@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                <div class="form-group">
+                    <label>Your name</label>
+                    <input type="text" name="name" placeholder="Enter your name">
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 5px;">
-                    <label style="color: white; font-weight: bold; font-family: sans-serif;">Your email</label>
-                    <input type="email" name="email" placeholder="Enter your email" style="padding: 12px; border-radius: 8px; border: 1px solid #444; background: #222; color: white;">
+                <div class="form-group">
+                    <label>Your email</label>
+                    <input type="email" name="email" placeholder="Enter your email">
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 5px;">
-                    <label style="color: white; font-weight: bold; font-family: sans-serif;">Your message</label>
-                    <textarea name="message" rows="5" placeholder="Enter your message" style="padding: 12px; border-radius: 8px; border: 1px solid #444; background: #222; color: white; resize: vertical;"></textarea>
+                <div class="form-group">
+                    <label>Your message</label>
+                    <textarea name="message" rows="5" placeholder="Enter your message"></textarea>
                 </div>
-                <button type="submit" style="padding: 12px 20px; background-color: #ff3366; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 16px;">Send message</button>
+                <button type="submit" class="submit-btn">Send message</button>
             </form>
         </div>
     </section>
